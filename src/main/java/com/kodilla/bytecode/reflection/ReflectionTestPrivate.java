@@ -16,7 +16,7 @@ public class ReflectionTestPrivate {
         String value = (String)signatureField.get(book);
         System.out.println(value);
 
-        Method rentBookMethod = Book.class.getDeclaredMethod("rentBook", null);
+        Method rentBookMethod = Book.class.getDeclaredMethod("rentBook");
         rentBookMethod.setAccessible(true);
 
         boolean result = (boolean)rentBookMethod.invoke(book);
