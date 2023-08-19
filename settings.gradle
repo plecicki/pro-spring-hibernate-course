@@ -6,3 +6,5 @@ pluginManagement {
     }
 }
 rootProject.name = 'bean-lifecycle'
+include 'kodilla-proxy'
+
