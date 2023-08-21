@@ -20,15 +20,15 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
 
-    jar {
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-        from {
-            configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
-        }
-        manifest {
-            attributes "Main-Class": 'com.kodilla.kodillauser.KodillaUserApplication'
-        }
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
+    }
+    manifest {
+        attributes "Main-Class": 'com.kodilla.kodillauser.JavaAgentController'
     }
 }
 

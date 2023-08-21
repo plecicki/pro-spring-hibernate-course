@@ -23,16 +23,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-activemq'
 
     implementation 'net.bytebuddy:byte-buddy:1.12.23'
-
-    jar {
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-        from {
-            configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
-        }
-        manifest {
-            attributes "Main-Class": 'com.kodilla.bytecode.reflection.ReflectionTest'
-        }
-    }
 }
 
 tasks.named('test') {
